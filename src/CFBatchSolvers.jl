@@ -1,5 +1,5 @@
 module CFBatchSolvers
 
-# Write your package code here.
+include("julia/single_solvers.jl")
 
-end
+end # module CFBatchSolvers
