@@ -3,12 +3,19 @@ module Solvers
 # Thomas algorithm for symmetric tridiagonal problem
 # Forward sweep can be in increasing order (flip_solve=false) or decreasing order.
 
-Thomas!(x, A, B, R, flip_solve) = flip_solve ? Thomas_flip!(x,A,B,R) : Thomas_noflip!(x,A,B,R)
+function Thomas!(x, A, B, R, flip_solve) 
+    Thomas!(x, similar(A), similar(B), A, B, R, flip_solve) 
+end
 
-function Thomas_noflip!(x, A, B, R)
+function Thomas!(x, C, D, A, B, R, flip_solve) 
+    flip_solve ? Thomas_flip!(x,C,D,A,B,R) : Thomas_noflip!(x,C,D,A,B,R)
+end
+
+# Thomas!(x, tridiag, A, B, R, flip_solve) = flip_solve ? Thomas_flip!(x,A,B,R) : Thomas_noflip!(x,A,B,R)
+
+function Thomas_noflip!(x, C, D, A, B, R)
     # Thomas algorithm for symmetric tridiagonal system
     Nz = size(A, 3)
-    C, D = similar(A), similar(B) # FIXME
     # Forward sweep
     let l = 1
         for i in axes(A,1), j in axes(A,2)
