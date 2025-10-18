@@ -1,7 +1,7 @@
 name = "CFBatchSolvers"
 uuid = "4c829458-57b5-4508-983f-2f0f605f5bfa"
 authors = ["Thomas Dubos <thomas.dubos@polytechnique.edu> and contributors"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
