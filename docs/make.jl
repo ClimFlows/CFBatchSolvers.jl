@@ -8,7 +8,7 @@ makedocs(;
     authors="Thomas Dubos <thomas.dubos@polytechnique.edu> and contributors",
     sitename="CFBatchSolvers.jl",
     format=Documenter.HTML(;
-        canonical="https://dubosipsl.github.io/CFBatchSolvers.jl",
+        canonical="https://ClimFlows.github.io/CFBatchSolvers.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -18,6 +18,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/dubosipsl/CFBatchSolvers.jl",
+    repo="github.com/ClimFlows/CFBatchSolvers.jl",
     devbranch="main",
 )
